@@ -26,5 +26,29 @@ public class AppPrefs {
 	public String GetPassword() {
 		return mySharedPreferences.getString(Constants.PASSWORD, "");
 	}
+	
+	public void SaveTimeMoving(boolean timeMoving) {
+		editor.putBoolean(Constants.TIMERMOVING, timeMoving);
+		editor.commit();
+	}
+	
+	public boolean GetTimeMoving() {
+		return mySharedPreferences.getBoolean(Constants.TIMERMOVING,
+				false);
+	}
+	
+	public int GetSpeed() {
+		return mySharedPreferences.getInt(Constants.SPEED, 1);
+	}
 
+	public void SaveElapsedTime(long elapsedTime) {
+		long savedTime = System.currentTimeMillis();
+		editor.putLong(Constants.SAVED_TIME, savedTime);
+		editor.putLong(Constants.ELAPSED_TIME, elapsedTime);
+		editor.commit();
+	}
+	
+	public long GetElapsedTime() {
+		return mySharedPreferences.getLong(Constants.ELAPSED_TIME, 0);
+	}
 }
