@@ -1,3 +1,4 @@
+package com.dangal.kiddyturns.activities;
 
 import com.dangal.kiddyturns.R;
 
